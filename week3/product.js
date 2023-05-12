@@ -9,8 +9,10 @@ const api_path = 'peter-hexschool';
 const app = {
   data() {
     return {
-      temp: {},
-      products: []
+      products: [],
+      temp: {
+        imagesUrl:[],
+      },
       
     }
   },
@@ -34,6 +36,9 @@ const app = {
         .then(res => {
           console.log(res);
           this.products = res.data.products
+        })
+        .catch(err => {
+          console.log(res.data.message)
         })
     },
 
